@@ -6,15 +6,16 @@
 (function($) {
 
 	"use strict";
-
-	$(window).stellar({
+if ($(window).width() > 768) {
+  $(window).stellar({
     responsive: true,
     parallaxBackgrounds: true,
     parallaxElements: true,
     horizontalScrolling: false,
-    hideDistantElements: false,
+    hideDistantElements: false,	
     scrollProperty: 'scroll'
   });
+}
 
 
 	var fullHeight = function() {
@@ -93,6 +94,9 @@
 	    nav:false,
 	    autoplayHoverPause: false,
 	    items: 1,
+			mouseDrag: true,      // ensure mouse drag works
+      touchDrag: true,      // enable finger swipe
+      pullDrag: true, 
 	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
 	    responsive:{
 	      0:{
