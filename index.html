@@ -821,6 +821,14 @@
     overflow:hidden;
     position:relative;
   }
+  .project-image {
+    display:block;
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-bottom:1px solid rgba(148,163,184,0.18);
+    background:linear-gradient(135deg, rgba(37,99,235,0.08), rgba(15,23,42,0.04));
+  }
   .project-card-inner { padding:32px 28px 28px; }
   .project-top-bar {
     height:3px;
@@ -1591,12 +1599,15 @@
       <h2 class="section-title">Work That <span>Speaks</span></h2>
       <p class="section-desc">A curated selection of projects demonstrating full-stack expertise, from concept through deployment.</p>
     </div>
-    <div class="proj      <div class="glass-card project-card reveal reveal-delay-1">
+
+    <div class="projects-grid">
+      <div class="glass-card project-card reveal reveal-delay-1">
+        <img class="project-image" src="images/hihidoc.png" alt="Hihidoc project preview">
         <div class="project-top-bar"></div>
         <div class="project-card-inner">
           <div class="project-num">Project / 01</div>
-          <h3 class="project-title">Echo Solar / Exxsun</h3>
-          <p class="project-desc">Developed a solar monitoring system with real-time dashboards for energy usage, historical data, and performance metrics. Integrated payment & billing module with automated invoicing. Built an admin panel to manage users, tariffs, installations, and system settings.</p>
+          <h3 class="project-title">Hihidoc</h3>
+          <p class="project-desc">Developed a healthcare-focused platform with clean patient workflows, secure data handling, and intuitive dashboards for better access to services and information.</p>
           <div class="tech-badges">
             <span class="badge badge-purple">Laravel</span>
             <span class="badge badge-green">MySQL</span>
@@ -1604,21 +1615,20 @@
             <span class="badge badge-orange">JS / jQuery</span>
           </div>
           <div class="project-btns">
-            <!-- Replace href below with your actual live demo URL -->
-            <a href="https://echo-solar-demo.khalidmajeed.dev" class="btn-sm btn-sm-fill" target="_blank" rel="noopener">
+            <a href="https://www.hihidoc.com" class="btn-sm btn-sm-fill" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <!-- Replace href below with your actual GitHub repository URL -->
-            <a href="https://github.com/khalidmajeed854/echo-solar" class="btn-sm btn-sm-ghost" target="_blank" rel="noopener">
+            <a href="https://github.com" class="btn-sm btn-sm-ghost" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77A5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
               GitHub
             </a>
           </div>
         </div>
       </div>
- 
+
       <div class="glass-card project-card reveal reveal-delay-2">
+        <img class="project-image" src="images/pharmacy.png" alt="Lottery app project preview">
         <div class="project-top-bar"></div>
         <div class="project-card-inner">
           <div class="project-num">Project / 02</div>
@@ -1631,12 +1641,10 @@
             <span class="badge badge-orange">JS / jQuery</span>
           </div>
           <div class="project-btns">
-            <!-- Replace href below with your actual live demo URL -->
             <a href="https://lottery-demo.khalidmajeed.dev" class="btn-sm btn-sm-fill" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <!-- Replace href below with your actual GitHub repository URL -->
             <a href="https://github.com/khalidmajeed854/lottery-app" class="btn-sm btn-sm-ghost" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77A5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
               GitHub
@@ -1644,8 +1652,9 @@
           </div>
         </div>
       </div>
- 
+
       <div class="glass-card project-card reveal reveal-delay-3">
+        <img class="project-image" src="images/agrovestor.png" alt="E-Commerce project preview">
         <div class="project-top-bar"></div>
         <div class="project-card-inner">
           <div class="project-num">Project / 03</div>
@@ -1658,12 +1667,10 @@
             <span class="badge badge-orange">JS</span>
           </div>
           <div class="project-btns">
-            <!-- Replace href below with your actual live demo URL -->
             <a href="https://ecommerce-demo.khalidmajeed.dev" class="btn-sm btn-sm-fill" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live Demo
             </a>
-            <!-- Replace href below with your actual GitHub repository URL -->
             <a href="https://github.com/khalidmajeed854/ecommerce-laravel" class="btn-sm btn-sm-ghost" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77A5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
               GitHub
@@ -1671,8 +1678,6 @@
           </div>
         </div>
       </div>
-      </div>
-
     </div>
   </div>
 </section>
