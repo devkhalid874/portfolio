@@ -90,7 +90,7 @@
   @keyframes loadFill { from{width:0} to{width:100%} }
 
   /* NAV */
-  nav {
+  #navbar {
     position:fixed;
     top:16px;
     left:50%;
@@ -110,7 +110,7 @@
     box-shadow:0 10px 30px rgba(15,23,42,0.08);
     transition:background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, top 0.35s ease;
   }
-  nav.scrolled {
+  #navbar.scrolled {
     background:rgba(255,255,255,0.18);
     border-color:rgba(255,255,255,0.5);
     box-shadow:0 12px 32px rgba(15,23,42,0.1);
@@ -1391,47 +1391,91 @@
 
   /* FOOTER */
   footer {
-    background:var(--bg);
-    border-top:1px solid var(--glass-border);
-    padding:40px clamp(20px,6vw,80px);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    flex-wrap:wrap;
+    background:#f8fafc;
+    color:#0f172a;
+    border-top:1px solid rgba(15,23,42,0.08);
+    padding:78px clamp(24px,8vw,120px) 28px;
     position:relative;
     z-index:2;
   }
+  .footer-inner { max-width:1440px; margin:0 auto; }
+  .footer-top {
+    display:grid;
+    grid-template-columns:minmax(0,1.5fr) minmax(170px,0.55fr) minmax(150px,0.45fr);
+    gap:clamp(32px,6vw,90px);
+    align-items:start;
+  }
+  .footer-heading {
+    max-width:720px;
+    margin:0 0 28px;
+    color:#0f172a;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:clamp(2.5rem,5vw,4.4rem);
+    font-weight:800;
+    line-height:1.02;
+  }
+  .footer-nav { display:flex; flex-wrap:wrap; gap:8px; }
+  .footer-nav a {
+    padding:9px 15px;
+    border:1px solid rgba(15,23,42,0.16);
+    border-radius:999px;
+    color:#334155;
+    font-size:0.72rem;
+    font-weight:600;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .footer-nav a:hover { background:rgba(37,99,235,0.08); border-color:var(--accent); color:var(--accent); }
+  .footer-column { padding-top:8px; }
+  .footer-column-title {
+    display:block;
+    color:var(--accent);
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .footer-contact-list,
+  .footer-social-list { display:grid; gap:14px; }
+  .footer-social-list a { display:flex; align-items:center; gap:10px; }
+  .footer-social-list i { width:16px; color:var(--accent); font-size:0.95rem; text-align:center; }
+  .footer-contact-list a,
+  .footer-social-list a {
+    color:#334155;
+    font-size:0.88rem;
+    line-height:1.5;
+    text-decoration:none;
+    overflow-wrap:anywhere;
+    transition:color 0.2s ease;
+  }
+  .footer-contact-list a:hover,
+  .footer-social-list a:hover { color:var(--accent); }
+  .footer-location { color:#64748b; font-size:0.82rem; line-height:1.5; }
+  .footer-hello {
+    display:block;
+    width:100%;
+    margin:80px 0 4px;
+    color:#0f172a;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:clamp(5rem,16vw,14rem);
+    font-weight:800;
+    line-height:0.78;
+    letter-spacing:0;
+    text-align:center;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:color 0.25s ease;
+  }
+  .footer-hello:hover { color:var(--accent); }
   .footer-copy {
     font-size:0.82rem;
-    color:var(--muted);
+    color:#64748b;
     font-weight:300;
   }
-  .footer-copy strong { color:var(--text); font-weight:600; }
-  .footer-socials {
-    display:flex;
-    gap:12px;
-  }
-  .social-link {
-    width:38px; height:38px;
-    border-radius:8px;
-    background:rgba(15,23,42,0.035);
-    border:1px solid var(--glass-border);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    color:var(--muted);
-    transition:all 0.3s ease;
-  }
-  .social-link svg { width:16px; height:16px; }
-  .social-link:hover {
-    background:rgba(37,99,235,0.1);
-    border-color:rgba(37,99,235,0.4);
-    color:var(--accent);
-    box-shadow:0 2px 8px rgba(37,99,235,0.18);
-    transform:translateY(-2px);
-  }
+  .footer-copy strong { color:#0f172a; font-weight:600; }
+  .footer-bottom { padding-top:24px; }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
@@ -1561,12 +1605,21 @@
     .testimonials-heading { align-items:flex-start; flex-direction:column; margin-bottom:30px; }
     .testimonial-card { width:min(78vw,280px); flex-basis:min(78vw,280px); min-height:270px; padding:22px 20px 18px; }
     .testimonial-group { gap:16px; padding-right:16px; }
-    footer { justify-content:center; text-align:center; }
+    footer { padding:58px 24px 24px; }
+    .footer-top { grid-template-columns:1fr 1fr; gap:36px 24px; }
+    .footer-brand { grid-column:1 / -1; }
+    .footer-heading { font-size:clamp(2.35rem,8vw,3.5rem); }
+    .footer-hello { margin-top:68px; font-size:clamp(4.6rem,18vw,7rem); }
+    .footer-bottom { align-items:flex-start; flex-direction:column; }
   }
   @media (max-width:480px) {
     .services-grid { grid-template-columns:1fr; }
     .about-cards { grid-template-columns:1fr; }
     .contact-cta-title { font-size:30px; }
+    .footer-top { grid-template-columns:1fr; gap:30px; }
+    .footer-brand { grid-column:auto; }
+    .footer-heading { font-size:2.45rem; }
+    .footer-hello { font-size:18vw; }
     .hero-btns { flex-direction:column; align-items:center; }
     .hero-btns a { width:100%; text-align:center; }
     .contact-form { padding:24px; }
@@ -2236,8 +2289,6 @@
   </div>
 </section>
 
-<div class="section-divider"></div>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-container">
@@ -2309,19 +2360,38 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">
-    &copy; 2026 <strong>Khalid</strong> — All rights reserved
-  </div>
-  <div class="footer-socials">
-    <a href="https://github.com/khalidmajeed854" class="social-link" title="GitHub" aria-label="GitHub Profile" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77A5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-    </a>
-    <a href="https://linkedin.com/in/khalidmajeed854" class="social-link" title="LinkedIn" aria-label="LinkedIn Profile" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-    </a>
-    <a href="https://wa.me/923362707268" class="social-link" title="WhatsApp" aria-label="WhatsApp Chat" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2 class="footer-heading">Let's make it happen together.</h2>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#journey">Experience</a>
+          <a href="#projects">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-column">
+        <span class="footer-column-title">Contact</span>
+        <div class="footer-contact-list">
+          <a href="mailto:khalidmajeed854@gmail.com">khalidmajeed854@gmail.com</a>
+          <a href="tel:+923362707268">+92 336 270 7268</a>
+          <span class="footer-location">Hyderabad, Pakistan</span>
+        </div>
+      </div>
+      <div class="footer-column">
+        <span class="footer-column-title">Follow Me</span>
+        <div class="footer-social-list">
+          <a href="https://linkedin.com/in/khalidmajeed854" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
+          <a href="https://github.com/khalidmajeed854" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
+          <a href="https://wa.me/923362707268" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <a class="footer-hello" href="mailto:khalidmajeed854@gmail.com">Say hello!</a>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 <strong>Khalid Majeed</strong>. All rights reserved.</div>
+    </div>
   </div>
 </footer>
 
